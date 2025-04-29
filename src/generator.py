@@ -2,7 +2,7 @@ from transformers import pipeline
 import torch
 
 class Generator:
-    def __init__(self, model_name="tiiuae/falcon-rw-1b"):
+    def __init__(self, model_name="deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"):
         device = 0 if torch.cuda.is_available() else -1
         self.pipe = pipeline("text-generation", model=model_name, device=device, max_new_tokens=300)
 
